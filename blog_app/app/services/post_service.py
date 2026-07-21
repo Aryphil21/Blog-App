@@ -19,7 +19,6 @@ async def create_post(post_data: PostCreate, author_id: int, db: AsyncSession) -
     await db.commit()
     await db.refresh(new_post)
     logger.info("post_created", post_id=new_post.id, author_id=author_id)
-    # publish AFTER commit — only emit events for things that actually persisted
     await producer.publish({
         "event": "post_created",
         "post_id": new_post.id,

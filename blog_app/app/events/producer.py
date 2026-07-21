@@ -9,8 +9,6 @@ logger = get_logger(__name__)
 
 TOPIC = "blog-events"
 
-# ONE shared producer for the whole app (a producer holds a network connection —
-# we create it once at startup, not per-request). It's None until start() runs.
 _producer: AIOKafkaProducer | None = None
 
 
