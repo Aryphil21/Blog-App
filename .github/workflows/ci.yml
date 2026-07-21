@@ -5,13 +5,7 @@ on:
   pull_request:
 
 jobs:
-  build-images:
-    runs-on: ubuntu-latest
-    steps:
-      - name: check out code
-        uses: actions/checkout@v4
-      - name: build images
-        run: docker compose build
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -46,3 +40,12 @@ jobs:
         ALGORITHM: HS256
         ACCESS_TOKEN_EXPIRE_MINUTES: 30
       run: pytest tests/ -v
+      
+  build-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out code
+        uses: actions/checkout@v4
+      - name: build images
+        run: docker compose build
+  
