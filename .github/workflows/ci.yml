@@ -24,4 +24,4 @@ jobs:
       - name: installing ruff
         run: pip install ruff
       - name: lint blog app and activity service
-        run: ruff check blog_app activity_service --select E9,F63,F7,F82
+        run: ruff check blog_app activity-service --select E9,F63,F7,F82
