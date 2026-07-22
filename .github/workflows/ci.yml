@@ -40,7 +40,7 @@ jobs:
         ALGORITHM: HS256
         ACCESS_TOKEN_EXPIRE_MINUTES: 30
       run: pytest tests/ -v
-      
+#testing out ci 
   build-images:
     runs-on: ubuntu-latest
     steps:
